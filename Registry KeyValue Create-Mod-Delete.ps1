@@ -20,7 +20,7 @@ function createRegKey {
 }
 
 # Test for the existence of a Key and delete it along with all subkeys/values
-function deleteRegKet {
+function deleteRegKey {
     param (
         [Parameter(Mandatory = $true)]
         [string]$Path
@@ -64,4 +64,5 @@ function deleteRegValue {
     If (Get-ItemProperty -Path $Path -Name $Name -ErrorAction SilentlyContinue) {
         Remove-ItemProperty -Path $Path -Name $Name
     }
+
 }
